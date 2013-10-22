@@ -13,17 +13,11 @@ Configure the server's Apt process to run through the cache
 
   In a terminal, type:
 
-  sudo nano /etc/apt/apt.conf.d/01proxy
-
-  Inside your new file, add a line that says:
-
-  Acquire::http::Proxy "http://127.0.0.1:3142";
+  echo 'Acquire::http::Proxy "http://127.0.0.1:3142";' | sudo tee /etc/apt/apt.conf.d/01proxy
 
 Client
 ======
 
-  sudo nano /etc/apt/apt.conf.d/01proxy
+  In a terminal, type:
 
-  Inside your new file, add a line that says:
-
-  Acquire::http::Proxy "http://10.0.2.2:3142";
+  echo 'Acquire::http::Proxy "http://10.0.2.2:3142";' | sudo tee /etc/apt/apt.conf.d/01proxy
